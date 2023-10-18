@@ -8,13 +8,16 @@ class database
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 		    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase","root","root");
 		
-		   String sql = "insert into employee values(2222, 'James Turner', 'Engineer', 50000)";
+		   String sql = "insert into employee values(22242, 'James Turner', 'Engineer', 50000)";
 
 		   Statement st = con.createStatement();
 		   int n = st.executeUpdate(sql);
-		   String sqlQuery = "SELECT * FROM employee";
+		   String sqlQuery = "SELECT ename, job fromm employee where empno='2222'";
+		   ResultSet resultSet = statement.executeQuery(sqlQuery);
+		   
+		   resultSet.close(); 
 		   st.close();
-		   con.close();
+		   con.close(); 
 
 		   if(n==1)
 		   {
