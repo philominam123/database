@@ -12,7 +12,7 @@ class database
 
 		   Statement st = con.createStatement();
 		   int n = st.executeUpdate(sql);
-		   String sqlQuery = "SELECT ename, job fromm employee where empno='2222'";
+		   String sqlQuery = "SELECT ename, job from employee where empno='2222'";
 		   ResultSet resultSet = statement.executeQuery(sqlQuery);
 		   
 		   resultSet.close(); 
